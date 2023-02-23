@@ -17,16 +17,17 @@ const Job = () => {
     });
     fetchSingleJob()
   }, [dispatch, id]);
-  
+
   const fetchSingleJob = async () => {
-    await axios.get(`https://ritter-cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json`)
+    await axios.get(`../data.json`)
       .then(resp => {
+        let job = resp.data.find(item => item.id == id)
         dispatch({
           type: "JOB_GET_SUCCESS",
-          payload: resp.data,
+          payload: job,
         });
       })
-      .catch(()=> {
+      .catch(() => {
         dispatch({
           type: "JOB_GET_FAILURE",
         })

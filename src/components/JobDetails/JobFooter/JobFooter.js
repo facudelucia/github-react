@@ -12,7 +12,7 @@ import {
         <StyledContainer>
           <Content>
             <StyledHeading as="h3" h3>
-              {data.title}
+              {data.position}
             </StyledHeading>
             <p>{data.company}</p>
           </Content>

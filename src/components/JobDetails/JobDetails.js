@@ -21,7 +21,7 @@ const JobDetails = ({ data }) => {
           <JobHeader data={data} />
           <ApplyButton onClick={handleApplyClick}>Apply Now</ApplyButton>
         </HeaderWrapper>
-        <Description>{data.description && parse(data.description)}</Description>
+        <Description>{data?.description && parse(data.description)}</Description>
       </Wrapper>
       <JobApplyInfo applyInfoRef={applyInfoRef} data={data.how_to_apply} />
     </>

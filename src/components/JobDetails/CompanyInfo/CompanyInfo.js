@@ -13,7 +13,7 @@ const JobIntro = ({ data }) => {
     <Wrapper>
       <Logo>
         <img
-          src={data.company_logo ? data.company_logo : bgImage}
+          src={data?.logo ? data?.logo : bgImage}
           alt="Company logotype"
         />
       </Logo>
@@ -22,9 +22,9 @@ const JobIntro = ({ data }) => {
           <CompanyName as="h2" h2>
             {data.company}
           </CompanyName>
-          <CompanyUrl>{data.company_url}</CompanyUrl>
+          <CompanyUrl>{data.website}</CompanyUrl>
         </div>
-        <Button as="a" href={data.company_url} target="_blank" secondary>
+        <Button as="a" href={data.website} target="_blank" secondary>
           Company Site
         </Button>
       </Content>

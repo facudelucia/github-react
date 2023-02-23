@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { Link } from 'react-router-dom';
 import bgImage from '../../../assets/desktop/CompanyLogo.png';
 import {
@@ -18,18 +17,18 @@ const Job = ({ data }) => {
       <Link as={Link} to={`/job/${data.id}`}>
         <Logo>
           <img
-            src={data.company_logo ? data.company_logo : bgImage}
+            src={data.logo ? data.logo : bgImage}
             alt={`${data.company} logo`}
           />
         </Logo>
         <Content>
           <Time>
-            <p>{moment(new Date(data.created_at)).fromNow()}</p>
+            <p>{data.postedAt}</p>
             <Spacer />
-            <p>{data.type}</p>
+            <p>{data.contract}</p>
           </Time>
           <Title>
-            {data.title}
+            {data.position}
           </Title>
           <CompanyName>{data.company}</CompanyName>
           <Locations>{data.location}</Locations>

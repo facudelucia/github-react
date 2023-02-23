@@ -1,15 +1,14 @@
-import moment from 'moment';
 import { Time, Spacer, Title, Locations } from './JobInfo.css';
 
 const JobHeader = ({ data }) => {
   return (
     <div>
       <Time>
-        <p>{moment(new Date(data.created_at)).fromNow()}</p>
+        <p>{data.postedAt}</p>
         <Spacer />
-        <p>{data.type}</p>
+        <p>{data.contract}</p>
       </Time>
-      <Title as="h1">{data.title}</Title>
+      <Title as="h1">{data.position}</Title>
       <Locations>{data.location}</Locations>
     </div>
   );
